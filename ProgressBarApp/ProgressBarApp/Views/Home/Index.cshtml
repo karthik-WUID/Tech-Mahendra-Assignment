@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h2 class="Heading">Progress Bar Demo</h2>
+<div class="container">
+    <div data-bind="foreach: Bars">
+        <div class="progressBarContainer">
+            <div class="progress" data-bind="style:{width:$data + '%', backgroundColor:($data >= 100) ? '#ff0000' : '#1792e5'}"></div>
+            <span class="percentage" data-bind="text:$data + '%'"></span>
+
+        </div>
+    </div>
+    <div class="buttonContainer">
+        <select class="select-ctrl" data-bind="options: dropdownBars, value: selectedChoice"></select>
+        <div class="buttons" data-bind="foreach: Buttons">
+            <button data-bind="text:$data, click:$parent.progress.bind($data)"></button>
+        </div>
+    </div>
+</div>
+
+    
